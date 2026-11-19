@@ -43,4 +43,10 @@ select policyname, cmd from pg_policies
 where schemaname = 'public' and tablename = 'assignments';
 ```
 
+```sql
+-- peab tagastama read rollile authenticated (anon-i seal ei tohi olla)
+select grantee, privilege_type from information_schema.role_table_grants
+where table_name = 'assignments';
+```
+
 Lisaks: logi sisse kahe eri kasutajana ja veendu, et teise kasutaja tööd ei ole nähtavad.

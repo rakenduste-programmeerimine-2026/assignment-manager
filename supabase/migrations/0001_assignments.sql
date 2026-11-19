@@ -45,3 +45,8 @@ create policy "assignments_delete_own"
   on public.assignments for delete
   to authenticated
   using (auth.uid() = user_id);
+
+-- Tabeli õigused rollidele. RLS poliitikad üksi ei piisa: ilma grantita saab
+-- sisseloginud kasutaja "permission denied for table assignments".
+-- Rollile `anon` teadlikult midagi ei anta — ilma sisselogimiseta ligi ei pääse.
+grant select, insert, update, delete on public.assignments to authenticated;
