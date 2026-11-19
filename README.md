@@ -16,10 +16,14 @@ mis on järgmisena vaja valmis saada.
 
 ## Käivitamine
 
-Täpsem juhend tuleb issue #12 raames. Lühidalt:
-
 ```bash
 npm install
-cp .env.example .env.local   # lisa Supabase URL ja anon key
+npm install @supabase/supabase-js @supabase/ssr
+cp .env.example .env.local
 npm run dev
 ```
+
+`.env.local` väärtused leiad Supabase projektist: **Project Settings -> API** →
+`Project URL` ja `anon public` võti. Vaata ka [supabase/README.md](supabase/README.md).
+
+`service_role` võtit rakendus ei kasuta ja seda repos ei hoita.
