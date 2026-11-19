@@ -18,12 +18,12 @@ mis on järgmisena vaja valmis saada. Eraldi kalendrit ega teavituste süsteemi 
 | Frontend | Next.js (App Router), TypeScript, Tailwind CSS |
 | Backend | Next.js server actions + `@supabase/ssr` |
 | Andmebaas | Supabase (Postgres, Auth, RLS) |
-| Deploy | Vercel |
+| Deploy | ei kuulu skoopi — rakendus jookseb lokaalselt (`npm run dev`) |
 
 ## Skoobist väljas (MVP ei sisalda)
 
 Teavitused, e-kiri, kalendrivaade, Moodle'i import, failide üleslaadimine, jagatud/tiimi vaated,
-korduvad tööd, mobiilirakendus.
+korduvad tööd, mobiilirakendus, avalik deploy (Vercel).
 
 ## Issue'd
 
@@ -42,7 +42,7 @@ Iga rida on üks issue → üks haru → üks PR. Järjekord on ka soovituslik t
 | 9 | feat(ui): uue töö lisamise vorm | `area:frontend` `type:feat` |
 | 10 | feat(ui): tööde nimekiri tähtaja järgi grupeeritult | `area:frontend` `type:feat` |
 | 11 | feat(ui): tehtud märkimine, tühi olek ja vigade kuvamine | `area:frontend` `type:feat` |
-| 12 | docs: README paigaldus-, kasutus- ja deploy-juhend | `area:docs` `type:docs` |
+| 12 | docs: README paigaldus- ja kasutusjuhend | `area:docs` `type:docs` |
 
 ## Sõltuvused
 
@@ -63,4 +63,5 @@ Issue'd 5–7 ja 9–11 on omavahel sõltumatud — neid saab paralleelselt teha
 - [ ] funktsionaalsus töötab käsitsi läbi proovides (PR kirjelduses "Kuidas testida")
 - [ ] uusi `console.log` ega kommenteeritud koodijuppe ei jäänud sisse
 
-**Projekt on valmis**, kui kõik `MVP`-sildiga issue'd on suletud ja rakendus on Vercelis töös.
+**Projekt on valmis**, kui kõik `MVP`-sildiga issue'd on suletud ja rakendus käivitub puhtalt
+kloonitud repost ainult README juhendi järgi.
