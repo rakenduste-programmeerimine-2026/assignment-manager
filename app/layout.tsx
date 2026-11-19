@@ -1,15 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
 });
 
 export const metadata: Metadata = {
@@ -19,11 +14,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="et"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="et" className={`${geistSans.variable} antialiased`}>
+      <body className="min-h-screen font-sans text-base">
+        <header className="border-b border-border bg-surface">
+          <div className="mx-auto max-w-[680px] px-4 py-4">
+            <p className="text-lg font-semibold">Tähtajad ühes kohas</p>
+          </div>
+        </header>
+        <main className="mx-auto max-w-[680px] px-4 py-8">{children}</main>
+      </body>
     </html>
   );
 }
